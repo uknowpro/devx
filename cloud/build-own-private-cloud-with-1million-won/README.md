@@ -64,7 +64,7 @@ cgroup_memory=1 cgroup_enable=memory
 ### 1. 각 USB 메모리에 라즈베리파이5 이미지저로 64비트 OS를 설치
 - https://www.raspberrypi.com/software/
 
-<img src="./images/raspberry_imager.png" width="678" height="477" />
+<img src="./images/raspberry_imager.jpg" width="678" height="477" />
 
 ### 2. 각 라즈베리파이5를 부팅하고 유선네트워크 연결
 
