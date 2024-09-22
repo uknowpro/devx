@@ -10,19 +10,21 @@
 
 | 장비      | 구매가              | 수량 | 설명 |
 | :-------- | :---------------- | :----- | :----- |
-| `중고랩탑`      | 미구매 | 1 | 4코어 8기가 메모리 |
+| 중고랩탑      | 미구매 | 1 | 4코어 8기가 메모리 |
 | `라즈베리파이5 본체` | 110,000     | 4 | 각 4코어 8기가 메모리 |
-| `라즈베리파이5 어댑터`      | 20,000 | 4 | 전원공급 |
-| `라즈베리파이5 케이스`      | 20,000 | 4 | 쿨러용 |
+| 라즈베리파이5 어댑터      | 20,000 | 4 | 전원공급 |
+| 라즈베리파이5 케이스      | 20,000 | 4 | 쿨러용 |
 | `USB 3.0 메모리 16GB`      | 30,000 | 3 | 라즈베리파이 부팅용 |
-| `USB 2.0 메모리 16GB`      | 미구매 | 1 | 라즈베리파이 부팅용 |
+| USB 2.0 메모리 16GB      | 미구매 | 1 | 라즈베리파이 부팅용 |
 | `NAS (4TB HDD포함)`      | 400,000 | 1 | k3s (NFS) storageclass 용 |
-| `스위칭허브 8포트`      | 30,000 | 1 | 클러스터 네트워킹용 |
-| `랜선`      | 2,500 | 6 | 클러스터 네트워킹용 + 여분 |
-| `알루미늄 멀티탭 8구`      | 30,000 | 1 | 전원공급용 |
+| 스위칭허브 8포트      | 30,000 | 1 | 클러스터 네트워킹용 |
+| 랜선      | 2,500 | 6 | 클러스터 네트워킹용 + 여분 |
+| 알루미늄 멀티탭 8구      | 30,000 | 1 | 전원공급용 |
 
 ### 라즈베리파이5 4개와 중고랩탑 1개를 합쳐서 총 5개 노드로 서버 구축
 <img src="./images/machines.jpg" width="350" height="400" />
+
+- 각 라즈베리파이5 당 조립시간은 평균 15분정도 걸린 것 같습니다.
 
 ### 원룸 공유기가 라우터라 스위칭 허브만 추가 구매
 <img src="./images/switching_hub.jpg" width="350" height="400" />
@@ -123,7 +125,7 @@ kubectl을 k로 alias 부여한 상태입니다.
 ```
 ~$ k get nodes -o wide
 NAME                     STATUS   ROLES                  AGE    VERSION        INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION        CONTAINER-RUNTIME
-k3s-master.linux.local   Ready    control-plane,master   18h    v1.30.4+k3s1   192.xxx.xx.xxx   <none>        Ubuntu 22.04.3 LTS               6.5.0-18-generic      docker://24.0.5
+k3s-master               Ready    control-plane,master   18h    v1.30.4+k3s1   192.xxx.xx.xxx   <none>        Ubuntu 22.04.3 LTS               6.5.0-18-generic      docker://24.0.5
 k3s-node1                Ready    <none>                 17h    v1.30.4+k3s1   192.xxx.xx.xxx   <none>        Debian GNU/Linux 12 (bookworm)   6.6.47+rpt-rpi-2712   containerd://1.7.20-k3s1
 k3s-node2                Ready    <none>                 69m    v1.30.4+k3s1   192.xxx.xx.xxx   <none>        Debian GNU/Linux 12 (bookworm)   6.6.31+rpt-rpi-2712   containerd://1.7.20-k3s1
 k3s-node3                Ready    <none>                 106m   v1.30.4+k3s1   192.xxx.xx.xxx   <none>        Debian GNU/Linux 12 (bookworm)   6.6.31+rpt-rpi-2712   containerd://1.7.20-k3s1
@@ -203,5 +205,5 @@ nfs                    cluster.local/nfs-nfs-subdir-external-provisioner   Delet
 
 ## 다음 Action Item
 - [ ] k3s 클러스터에 gitops를 구축
-- [ ] k3s 클러스터에 사이드 프로젝트로 진행한 서비스를 배포하여 운영
 - [ ] k3s 클러스터에 모니터링 환경 구축(Prometheus, Loki, Grafana 등)
+- [ ] k3s 클러스터에 사이드 프로젝트로 진행한 서비스를 배포하여 운영
